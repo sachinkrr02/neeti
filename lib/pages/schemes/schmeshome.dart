@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grameen_neeti/profiledetails.dart';
-import 'package:grameen_neeti/womenschemes.dart';
-
-void main() {
-  runApp(const page1());
-}
+import 'package:grameen_neeti/pages/profile/profiledetails.dart';
+import 'package:grameen_neeti/pages/schemes/womenschemes.dart';
 
 class page1 extends StatelessWidget {
   const page1({Key? key}) : super(key: key);
@@ -89,7 +85,7 @@ class schemeshome extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => profiledetail()));
+                                  builder: (context) => womenschemes()));
                         },
                         child: const Text(
                           'Women',

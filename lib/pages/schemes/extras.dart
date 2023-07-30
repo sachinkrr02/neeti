@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "Hello World",
-    home: menu(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
 
 class menu extends StatelessWidget {
   @override

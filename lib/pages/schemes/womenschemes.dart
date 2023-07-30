@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:grameen_neeti/schemes.dart';
-import 'package:grameen_neeti/schmeshome.dart';
+import 'package:grameen_neeti/pages/schemes/schemes.dart';
+import 'package:grameen_neeti/pages/schemes/schmeshome.dart';
 
-void main() {
-  runApp(const womenschemes());
-}
+
 
 class womenschemes extends StatelessWidget {
   const womenschemes({Key? key}) : super(key: key);

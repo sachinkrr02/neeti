@@ -35,7 +35,6 @@ dependencies:
   firebase_auth: ^4.1.4
   flutter_tts: ^3.5.0
   firebase_database: ^10.0.6
-  vertical_stepper: ^0.0.1
   lottie: ^1.4.1
   alan_voice: 3.0.0
   

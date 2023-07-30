@@ -1,16 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:grameen_neeti/homepage.dart';
-import 'package:grameen_neeti/profiledetails.dart';
-import 'package:grameen_neeti/login.dart';
+import 'package:grameen_neeti/pages/homepage.dart';
+import 'package:grameen_neeti/pages/profile/profiledetails.dart';
+import 'package:grameen_neeti/pages/login.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "Profile",
-    home: profile(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
+
 
 class profile extends StatelessWidget {
   @override

@@ -1,22 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:grameen_neeti/chatbotmain.dart';
-import 'package:grameen_neeti/extras.dart';
+import 'package:grameen_neeti/pages/chatbot/chatbotmain.dart';
+import 'package:grameen_neeti/pages/schemes/extras.dart';
 import 'package:grameen_neeti/main.dart';
-import 'package:grameen_neeti/profiledetails.dart';
-import 'package:grameen_neeti/profilee.dart';
-import 'package:grameen_neeti/schmeshome.dart';
-import 'package:grameen_neeti/tracker.dart';
+import 'package:grameen_neeti/pages/profile/profiledetails.dart';
+import 'package:grameen_neeti/pages/profile/profilee.dart';
+import 'package:grameen_neeti/pages/profile/profileNew.dart';
+import 'package:grameen_neeti/pages/schemes/schmeshome.dart';
+import 'package:grameen_neeti/signup.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'dart:ui';
-
-void main() {
-  runApp(MaterialApp(
-    title: "Hello World",
-    home: homepage(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
 
 class homepage extends StatefulWidget {
   @override
@@ -64,7 +57,7 @@ class _MyAppState extends State<homepage> {
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => profiledetail()));
+                      builder: (BuildContext context) => ProfileNew()));
                 },
               ),
               ListTile(
@@ -91,8 +84,6 @@ class _MyAppState extends State<homepage> {
                 ),
                 onTap: () {
                   Navigator.of(context).pop();
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => tracker()));
                 },
               ),
               ListTile(
@@ -148,7 +139,7 @@ class _MyAppState extends State<homepage> {
                 onTap: () {
                   Navigator.of(context).pop();
                   Navigator.of(context).push(MaterialPageRoute(
-                      builder: (BuildContext context) => HomeScreen()));
+                      builder: (BuildContext context) => Signup()));
                 },
               ),
             ],

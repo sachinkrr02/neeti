@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:grameen_neeti/schemes.dart';
+import 'package:grameen_neeti/pages/schemes/schemes.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(
-    title: "Hello World",
-    home: detailschemes(),
-  ));
-}
 
 class detailschemes extends StatelessWidget {
   detailschemes({Key? key}) : super(key: key);

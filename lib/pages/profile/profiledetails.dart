@@ -1,7 +1,7 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:grameen_neeti/homepage.dart';
-import 'package:grameen_neeti/viewprofiledetail.dart';
+import 'package:grameen_neeti/pages/homepage.dart';
+import 'package:grameen_neeti/pages/profile/viewprofiledetail.dart';
 
 class profiledetail extends StatefulWidget {
   const profiledetail({Key? key}) : super(key: key);

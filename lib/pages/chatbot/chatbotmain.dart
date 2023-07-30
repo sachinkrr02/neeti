@@ -1,8 +1,7 @@
 import 'package:dialog_flowtter/dialog_flowtter.dart';
 import 'package:flutter/material.dart';
-import 'package:grameen_neeti/chatbotmessages.dart';
+import 'package:grameen_neeti/pages/chatbot/chatbotmessages.dart';
 
-void main() => runApp(chatbotmain());
 
 class chatbotmain extends StatelessWidget {
   const chatbotmain({Key? key}) : super(key: key);

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:grameen_neeti/homepage.dart';
+import 'package:grameen_neeti/pages/homepage.dart';
 
-class signup extends StatelessWidget {
-  const signup({Key? key}) : super(key: key);
+class signupp extends StatelessWidget {
+  const signupp({Key? key}) : super(key: key);
 
   static const String _title = 'Grameen Neeti';
 
@@ -43,11 +43,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     'हिंदी',
   ];
 
-  FirebaseAuth auth = FirebaseAuth.instance;
+  //FirebaseAuth auth = FirebaseAuth.instance;
 
-  bool otpVisibility = false;
+  //bool otpVisibility = false;
 
-  String verificationID = "";
+  //String verificationID = "";
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +78,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 decoration: InputDecoration(),
                 keyboardType: TextInputType.number,
               ),
-              visible: otpVisibility,
+              //visible: otpVisibility,
             ),
             SizedBox(
               height: 20,
@@ -122,64 +122,64 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 height: 50,
                 padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                 child: ElevatedButton(
-                    onPressed: () {
-                      if (otpVisibility) {
-                        verifyOTP();
-                      } else {
-                        loginWithPhone();
-                      }
-                    },
-                    child: Text(otpVisibility ? "Verify" : "Get OTP"))),
+                  child: Text("Login"),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => homepage()));
+                  },
+                ))
+            //child: Text(otpVisibility ? "Verify" : "Get OTP"))),
           ],
         ));
   }
 
-  void loginWithPhone() async {
-    auth.verifyPhoneNumber(
-      phoneNumber: phoneController.text,
-      verificationCompleted: (PhoneAuthCredential credential) async {
-        await auth.signInWithCredential(credential).then((value) {
-          print("You are logged in successfully");
-        });
-      },
-      verificationFailed: (FirebaseAuthException e) {
-        print("Verification failed");
-      },
-      codeSent: (String verificationId, int? resendToken) {
-        otpVisibility = true;
-        verificationID = verificationId;
-        setState(() {});
-      },
-      codeAutoRetrievalTimeout: (String verificationId) {},
-    );
-    Fluttertoast.showToast(
-        msg: "OTP Sent Sucessfully",
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.CENTER,
-        timeInSecForIosWeb: 1,
-        backgroundColor: Colors.black,
-        textColor: Colors.white,
-        fontSize: 18.0);
-  }
+  // void loginWithPhone() async
+  //  {
+  //   auth.verifyPhoneNumber(
+  //     phoneNumber: phoneController.text,
+  //     verificationCompleted: (PhoneAuthCredential credential) async {
+  //       await auth.signInWithCredential(credential).then((value) {
+  //         print("You are logged in successfully");
+  //       });
+  //     },
+  //     verificationFailed: (FirebaseAuthException e) {
+  //       print("Verification failed");
+  //     },
+  //     codeSent: (String verificationId, int? resendToken) {
+  //       otpVisibility = true;
+  //       verificationID = verificationId;
+  //       setState(() {});
+  //     },
+  //     codeAutoRetrievalTimeout: (String verificationId) {},
+  //   );
+  //   Fluttertoast.showToast(
+  //       msg: "OTP Sent Sucessfully",
+  //       toastLength: Toast.LENGTH_SHORT,
+  //       gravity: ToastGravity.CENTER,
+  //       timeInSecForIosWeb: 1,
+  //       backgroundColor: Colors.black,
+  //       textColor: Colors.white,
+  //       fontSize: 18.0);
+  // }
 
-  void verifyOTP() async {
-    PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationID, smsCode: OTPController.text);
+  // void verifyOTP() async {
+  //   PhoneAuthCredential credential = PhoneAuthProvider.credential(
+  //       verificationId: verificationID, smsCode: OTPController.text);
 
-    await auth.signInWithCredential(credential).then((value) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => homepage()),
-      );
-      print("You are logged in successfully");
-      Fluttertoast.showToast(
-          msg: "You are logged in successfully",
-          toastLength: Toast.LENGTH_SHORT,
-          gravity: ToastGravity.CENTER,
-          timeInSecForIosWeb: 1,
-          backgroundColor: Colors.green,
-          textColor: Colors.white,
-          fontSize: 16.0);
-    });
-  }
+  //   await auth.signInWithCredential(credential).then((value) {
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(builder: (context) => homepage()),
+  //     );
+  //     print("You are logged in successfully");
+  //     Fluttertoast.showToast(
+  //         msg: "You are logged in successfully",
+  //         toastLength: Toast.LENGTH_SHORT,
+  //         gravity: ToastGravity.CENTER,
+  //         timeInSecForIosWeb: 1,
+  //         backgroundColor: Colors.green,
+  //         textColor: Colors.white,
+  //         fontSize: 16.0);
+  //   });
+  // }
 }

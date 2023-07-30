@@ -1,15 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:grameen_neeti/detailed_schemes.dart';
-import 'package:grameen_neeti/homepage.dart';
+import 'package:grameen_neeti/pages/schemes/detailed_schemes.dart';
+import 'package:grameen_neeti/pages/homepage.dart';
 
-void main() {
-  runApp(MaterialApp(
-    title: "Hello World",
-    home: schemes(),
-    debugShowCheckedModeBanner: false,
-  ));
-}
 
 class schemes extends StatelessWidget {
   @override
